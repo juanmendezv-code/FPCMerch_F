@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}Mi cuenta · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">TU ESPACIO FPCMERCH</span>
+<h1>Hola, {{ user.first_name|default:user.email }}</h1>
+<p>{{ user.email }}</p>
+</section>
+<section class="container profile-layout">
+<nav class="profile-tabs">
+<a href="#information">Mi información</a>
+<a href="#orders">Mis pedidos</a>
+<form method="post" action="{% url 'users:logout' %}">
+{% csrf_token %}<button class="text-button">Cerrar sesión</button>
+</form>
+</nav>
+<div>
+<form id="information" method="post" class="form-card">
+{% csrf_token %}<h2>Mi información</h2>
+{% for field in form %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}<button class="button button-dark">Guardar cambios</button>
+</form>
+<div class="profile-orders" id="orders">
+<h2>Mis pedidos</h2>
+{% if orders %}<div class="table-scroll">
+<table class="data-table">
+<thead>
+<tr>
+<th>Número</th>
+<th>Fecha</th>
+<th>Estado</th>
+<th>Total</th>
+<th>
+</th>
+</tr>
+</thead>
+<tbody>
+{% for order in orders %}<tr>
+<td>{{ order.number }}</td>
+<td>{{ order.created_at|date:'d/m/Y' }}</td>
+<td>{{ order.get_status_display }}</td>
+<td>{{ order.total|cop }}</td>
+<td>
+<a href="{% url 'orders:detail' order.number %}">Ver detalle</a>
+</td>
+</tr>
+{% endfor %}</tbody>
+</table>
+</div>
+{% else %}<div class="empty-state">
+<p>Aún no tienes pedidos.</p>
+<a class="button button-dark" href="{% url 'products:catalog' %}">Ir al catálogo</a>
+</div>
+{% endif %}</div>
+</div>
+</section>
+{% endblock %}

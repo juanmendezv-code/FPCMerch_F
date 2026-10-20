@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Acceso denegado · FPCMerch
+{% endblock %}
+{% block content %}<section class="container info-card">
+<span class="eyebrow">ERROR 403</span>
+<h1>No tienes permiso</h1>
+<p>Esta sección está disponible para personal autorizado.</p>
+<a class="button button-dark" href="{% url 'pages:home' %}">Volver al inicio</a>
+</section>
+{% endblock %}

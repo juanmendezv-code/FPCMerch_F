@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}Finalizar compra · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">ÚLTIMO PASO</span>
+<h1>Finalizar compra</h1>
+<p>Pago de demostración: no se procesan tarjetas ni datos bancarios.</p>
+</section>
+<section class="container checkout-layout">
+<form method="post" class="form-card">
+{% csrf_token %}
+{% for field in form %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}<button class="button button-dark full-width">Confirmar pedido de demostración</button>
+</form>
+<aside class="order-summary">
+<h2>Tu pedido</h2>
+{% for line in lines %}<p>{{ line.quantity }} × {{ line.product.name }} <strong>{{ line.subtotal|cop }}</strong>
+</p>
+{% endfor %}<p>
+<span>Subtotal</span>
+<strong>{{ total|cop }}</strong>
+</p>
+<p>
+<span>Envío</span>
+<strong>
+{% if shipping %}{{ shipping|cop }}
+{% else %}Gratis
+{% endif %}</strong>
+</p>
+<p class="summary-total">
+<span>Total</span>
+<strong>{{ grand_total|cop }}</strong>
+</p>
+</aside>
+</section>
+{% endblock %}

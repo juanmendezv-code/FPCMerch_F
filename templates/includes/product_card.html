@@ -1,0 +1,27 @@
+{% load money %}<article class="product-card">
+<a href="{% url 'products:detail' product.slug %}" class="product-image">
+{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">
+{% else %}<span>FPC</span>
+{% endif %}
+{% if product.is_featured %}<em>DESTACADO</em>
+{% endif %}</a>
+<div class="product-card-body">
+<small>{{ product.category.name }}</small>
+<h3>
+<a href="{% url 'products:detail' product.slug %}">{{ product.name }}</a>
+</h3>
+<strong>{{ product.price|cop }}</strong>
+<form class="card-cart-form" data-cart-form data-product-id="{{ product.pk }}">
+<label class="sr-only" for="size-{{ product.pk }}">Talla</label>
+<select id="size-{{ product.pk }}" name="size_id" required>
+{% for size in product.sizes.all %}<option value="{{ size.pk }}"
+{% if not size.stock %}disabled
+{% endif %}>{{ size.size }}
+{% if not size.stock %} · Agotada
+{% endif %}</option>
+{% endfor %}</select>
+<button class="button button-dark" type="submit">Agregar al carrito</button>
+</form>
+<a class="detail-link" href="{% url 'products:detail' product.slug %}">Ver detalle →</a>
+</div>
+</article>

@@ -1,0 +1,1072 @@
+[
+{
+  "model": "products.category",
+  "pk": 1,
+  "fields": {
+    "name": "Camisetas",
+    "slug": "camisetas",
+    "icon": "👕",
+    "order": 1
+  }
+},
+{
+  "model": "products.category",
+  "pk": 2,
+  "fields": {
+    "name": "Pantalones",
+    "slug": "pantalones",
+    "icon": "🩳",
+    "order": 2
+  }
+},
+{
+  "model": "products.category",
+  "pk": 3,
+  "fields": {
+    "name": "Chaquetas",
+    "slug": "chaquetas",
+    "icon": "🧥",
+    "order": 3
+  }
+},
+{
+  "model": "products.category",
+  "pk": 4,
+  "fields": {
+    "name": "Medias",
+    "slug": "medias",
+    "icon": "🧦",
+    "order": 4
+  }
+},
+{
+  "model": "products.category",
+  "pk": 5,
+  "fields": {
+    "name": "Uniformes",
+    "slug": "uniformes",
+    "icon": "🏟️",
+    "order": 5
+  }
+},
+{
+  "model": "products.category",
+  "pk": 6,
+  "fields": {
+    "name": "Guayos",
+    "slug": "guayos",
+    "icon": "👟",
+    "order": 6
+  }
+},
+{
+  "model": "products.category",
+  "pk": 7,
+  "fields": {
+    "name": "Accesorios",
+    "slug": "accesorios",
+    "icon": "🎽",
+    "order": 7
+  }
+},
+{
+  "model": "products.product",
+  "pk": 1,
+  "fields": {
+    "name": "Camiseta Colombia Titular 2025",
+    "slug": "camiseta-colombia-titular-2025",
+    "sku": "LEGACY-00001",
+    "description": "Camiseta oficial Selección Colombia. Tecnología Dry-Fit, bordado FCF.",
+    "price": "189000.00",
+    "category": 3,
+    "image": "products/img/camiseta_colombia.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.020Z",
+    "updated_at": "2026-10-19T22:13:25.498Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 2,
+  "fields": {
+    "name": "Camiseta Real Madrid Local",
+    "slug": "camiseta-real-madrid-local",
+    "sku": "LEGACY-00002",
+    "description": "Réplica premium temporada 2024/25. Parche de campeón incluido.",
+    "price": "215000.00",
+    "category": 1,
+    "image": "products/img/camiseta_madrid.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "created_at": "2026-10-14T00:41:24.036Z",
+    "updated_at": "2026-10-19T22:13:25.504Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 3,
+  "fields": {
+    "name": "Camiseta Atlético Nacional",
+    "slug": "camiseta-atletico-nacional",
+    "sku": "LEGACY-00003",
+    "description": "Camiseta oficial del Verde de la Montaña. Franjas verticales clásicas.",
+    "price": "145000.00",
+    "category": 1,
+    "image": "products/img/camiseta_nacional.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.052Z",
+    "updated_at": "2026-10-19T22:13:25.504Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 4,
+  "fields": {
+    "name": "Camiseta Bayern Munich 24/25",
+    "slug": "camiseta-bayern-munich-2425",
+    "sku": "LEGACY-00004",
+    "description": "Rojo carmín con detalles en blanco. Material AeroReady reciclado.",
+    "price": "210000.00",
+    "category": 1,
+    "image": "products/img/camiseta_bayern.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "created_at": "2026-10-14T00:41:24.052Z",
+    "updated_at": "2026-10-19T22:13:25.504Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 5,
+  "fields": {
+    "name": "Camiseta Millonarios FC",
+    "slug": "camiseta-millonarios-fc",
+    "sku": "LEGACY-00005",
+    "description": "Azul rey con detalles plateados y escudo bordado oficial.",
+    "price": "140000.00",
+    "category": 1,
+    "image": "products/img/camiseta_millonarios.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.052Z",
+    "updated_at": "2026-10-19T22:13:25.504Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 6,
+  "fields": {
+    "name": "Pantaloneta Nike Dri-FIT",
+    "slug": "pantaloneta-nike-dri-fit",
+    "sku": "LEGACY-00006",
+    "description": "Cintura elástica ajustable, 2 bolsillos laterales, interior de malla.",
+    "price": "89000.00",
+    "category": 2,
+    "image": "products/img/pantaloneta_nike.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.052Z",
+    "updated_at": "2026-10-19T22:13:25.523Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 7,
+  "fields": {
+    "name": "Short Adidas Tiro 23",
+    "slug": "short-adidas-tiro-23",
+    "sku": "LEGACY-00007",
+    "description": "Franjas clásicas blancas laterales. Material AEROREADY.",
+    "price": "79000.00",
+    "category": 2,
+    "image": "products/img/short_tiro23.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.068Z",
+    "updated_at": "2026-10-19T22:13:25.526Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 8,
+  "fields": {
+    "name": "Pantaloneta Colombia Oficial 2025",
+    "slug": "pantaloneta-colombia-oficial-2025",
+    "sku": "LEGACY-00008",
+    "description": "Combinación perfecta con la camiseta titular. Sello oficial FCF.",
+    "price": "95000.00",
+    "category": 2,
+    "image": "products/img/pantaloneta_colombia.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "created_at": "2026-10-14T00:41:24.068Z",
+    "updated_at": "2026-10-19T22:13:25.528Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 9,
+  "fields": {
+    "name": "Chaqueta Técnica Track Jacket",
+    "slug": "chaqueta-tecnica-track-jacket",
+    "sku": "LEGACY-00009",
+    "description": "Resistente al agua, capucha desmontable. Costuras termoselladas.",
+    "price": "249000.00",
+    "category": 3,
+    "image": "products/img/chaqueta_track.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.068Z",
+    "updated_at": "2026-10-19T22:13:25.530Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 10,
+  "fields": {
+    "name": "Chaqueta Selección Colombia",
+    "slug": "chaqueta-seleccion-colombia",
+    "sku": "LEGACY-00010",
+    "description": "Diseño tricolor oficial. Rompevientos con bolsillos interiores.",
+    "price": "275000.00",
+    "category": 3,
+    "image": "products/img/chaqueta_colombia.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "created_at": "2026-10-14T00:41:24.068Z",
+    "updated_at": "2026-10-19T22:13:25.532Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 11,
+  "fields": {
+    "name": "Guayos Nike Tiempo Legend X",
+    "slug": "guayos-nike-tiempo-legend-x",
+    "sku": "LEGACY-00011",
+    "description": "Suela de tacos para césped natural. Cuero sintético premium.",
+    "price": "320000.00",
+    "category": 6,
+    "image": "products/img/guayos_nike.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.084Z",
+    "updated_at": "2026-10-19T22:13:25.536Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 12,
+  "fields": {
+    "name": "Guayos Adidas Predator Edge",
+    "slug": "guayos-adidas-predator-edge",
+    "sku": "LEGACY-00012",
+    "description": "Zona de control en el empeine. Tacos coniformes multidireccionales.",
+    "price": "295000.00",
+    "category": 6,
+    "image": "products/img/guayos_adidas.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.084Z",
+    "updated_at": "2026-10-19T22:13:25.540Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 13,
+  "fields": {
+    "name": "Guayos Puma Future 7 Pro",
+    "slug": "guayos-puma-future-7-pro",
+    "sku": "LEGACY-00013",
+    "description": "Cordones asimétricos para mayor área de contacto. Ultra-ligeros.",
+    "price": "275000.00",
+    "category": 6,
+    "image": "products/img/guayos_puma.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.095Z",
+    "updated_at": "2026-10-19T22:13:25.542Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 14,
+  "fields": {
+    "name": "Kit Completo Local Verde",
+    "slug": "kit-completo-local-verde",
+    "sku": "LEGACY-00014",
+    "description": "Camiseta + pantaloneta + medias. Personalización gratis con nombre y número.",
+    "price": "320000.00",
+    "category": 5,
+    "image": "products/img/kit_verde.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.099Z",
+    "updated_at": "2026-10-19T22:13:25.545Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 15,
+  "fields": {
+    "name": "Pack x3 Medias Colombia",
+    "slug": "pack-x3-medias-colombia",
+    "sku": "LEGACY-00015",
+    "description": "3 pares colores tricolor. Material técnico, ajuste hasta la rodilla.",
+    "price": "72000.00",
+    "category": 4,
+    "image": "products/img/medias_colombia.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.099Z",
+    "updated_at": "2026-10-19T22:13:25.547Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 16,
+  "fields": {
+    "name": "Balón Fútbol Pro Match FIFA",
+    "slug": "balon-futbol-pro-match-fifa",
+    "sku": "LEGACY-00016",
+    "description": "Cámara de látex, 32 paneles cosidos. Certificado FIFA Basic.",
+    "price": "145000.00",
+    "category": 7,
+    "image": "products/img/balon_pro.jpg",
+    "is_active": true,
+    "is_featured": false,
+    "created_at": "2026-10-14T00:41:24.099Z",
+    "updated_at": "2026-10-19T22:13:25.547Z"
+  }
+},
+{
+  "model": "products.product",
+  "pk": 17,
+  "fields": {
+    "name": "Guantes Portero GK Elite",
+    "slug": "guantes-portero-gk-elite",
+    "sku": "LEGACY-00017",
+    "description": "Palma látex alemán Grade 4. Dedo desmontable. Cierre muñeca Velcro.",
+    "price": "50000.00",
+    "category": 7,
+    "image": "products/img/guantes_gk.jpg",
+    "is_active": true,
+    "is_featured": true,
+    "created_at": "2026-10-14T00:41:24.099Z",
+    "updated_at": "2026-10-19T23:25:32.447Z"
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 1,
+  "fields": {
+    "product": 1,
+    "size": "S",
+    "stock": 15
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 2,
+  "fields": {
+    "product": 1,
+    "size": "M",
+    "stock": 20
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 3,
+  "fields": {
+    "product": 1,
+    "size": "L",
+    "stock": 18
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 4,
+  "fields": {
+    "product": 1,
+    "size": "XL",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 5,
+  "fields": {
+    "product": 1,
+    "size": "ooo",
+    "stock": 5
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 6,
+  "fields": {
+    "product": 2,
+    "size": "XS",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 7,
+  "fields": {
+    "product": 2,
+    "size": "S",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 8,
+  "fields": {
+    "product": 2,
+    "size": "M",
+    "stock": 15
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 9,
+  "fields": {
+    "product": 2,
+    "size": "L",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 10,
+  "fields": {
+    "product": 2,
+    "size": "XL",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 11,
+  "fields": {
+    "product": 3,
+    "size": "S",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 12,
+  "fields": {
+    "product": 3,
+    "size": "M",
+    "stock": 14
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 13,
+  "fields": {
+    "product": 3,
+    "size": "L",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 14,
+  "fields": {
+    "product": 3,
+    "size": "XL",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 15,
+  "fields": {
+    "product": 3,
+    "size": "XXL",
+    "stock": 4
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 16,
+  "fields": {
+    "product": 4,
+    "size": "S",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 17,
+  "fields": {
+    "product": 4,
+    "size": "M",
+    "stock": 11
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 18,
+  "fields": {
+    "product": 4,
+    "size": "L",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 19,
+  "fields": {
+    "product": 4,
+    "size": "XL",
+    "stock": 7
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 20,
+  "fields": {
+    "product": 5,
+    "size": "S",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 21,
+  "fields": {
+    "product": 5,
+    "size": "M",
+    "stock": 16
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 22,
+  "fields": {
+    "product": 5,
+    "size": "L",
+    "stock": 14
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 23,
+  "fields": {
+    "product": 5,
+    "size": "XL",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 24,
+  "fields": {
+    "product": 5,
+    "size": "XXL",
+    "stock": 3
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 25,
+  "fields": {
+    "product": 6,
+    "size": "S",
+    "stock": 20
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 26,
+  "fields": {
+    "product": 6,
+    "size": "M",
+    "stock": 25
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 27,
+  "fields": {
+    "product": 6,
+    "size": "L",
+    "stock": 18
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 28,
+  "fields": {
+    "product": 6,
+    "size": "XL",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 29,
+  "fields": {
+    "product": 6,
+    "size": "XXL",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 30,
+  "fields": {
+    "product": 7,
+    "size": "S",
+    "stock": 14
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 31,
+  "fields": {
+    "product": 7,
+    "size": "M",
+    "stock": 18
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 32,
+  "fields": {
+    "product": 7,
+    "size": "L",
+    "stock": 15
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 33,
+  "fields": {
+    "product": 7,
+    "size": "XL",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 34,
+  "fields": {
+    "product": 8,
+    "size": "S",
+    "stock": 11
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 35,
+  "fields": {
+    "product": 8,
+    "size": "M",
+    "stock": 16
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 36,
+  "fields": {
+    "product": 8,
+    "size": "L",
+    "stock": 13
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 37,
+  "fields": {
+    "product": 8,
+    "size": "XL",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 38,
+  "fields": {
+    "product": 8,
+    "size": "XXL",
+    "stock": 4
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 39,
+  "fields": {
+    "product": 9,
+    "size": "S",
+    "stock": 7
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 40,
+  "fields": {
+    "product": 9,
+    "size": "M",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 41,
+  "fields": {
+    "product": 9,
+    "size": "L",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 42,
+  "fields": {
+    "product": 9,
+    "size": "XL",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 43,
+  "fields": {
+    "product": 9,
+    "size": "XXL",
+    "stock": 3
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 44,
+  "fields": {
+    "product": 10,
+    "size": "S",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 45,
+  "fields": {
+    "product": 10,
+    "size": "M",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 46,
+  "fields": {
+    "product": 10,
+    "size": "L",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 47,
+  "fields": {
+    "product": 10,
+    "size": "XL",
+    "stock": 5
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 48,
+  "fields": {
+    "product": 11,
+    "size": "38",
+    "stock": 5
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 49,
+  "fields": {
+    "product": 11,
+    "size": "39",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 50,
+  "fields": {
+    "product": 11,
+    "size": "40",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 51,
+  "fields": {
+    "product": 11,
+    "size": "41",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 52,
+  "fields": {
+    "product": 11,
+    "size": "42",
+    "stock": 7
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 53,
+  "fields": {
+    "product": 11,
+    "size": "43",
+    "stock": 4
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 54,
+  "fields": {
+    "product": 12,
+    "size": "38",
+    "stock": 4
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 55,
+  "fields": {
+    "product": 12,
+    "size": "39",
+    "stock": 7
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 56,
+  "fields": {
+    "product": 12,
+    "size": "40",
+    "stock": 9
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 57,
+  "fields": {
+    "product": 12,
+    "size": "41",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 58,
+  "fields": {
+    "product": 12,
+    "size": "42",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 59,
+  "fields": {
+    "product": 12,
+    "size": "43",
+    "stock": 3
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 60,
+  "fields": {
+    "product": 13,
+    "size": "38",
+    "stock": 3
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 61,
+  "fields": {
+    "product": 13,
+    "size": "39",
+    "stock": 6
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 62,
+  "fields": {
+    "product": 13,
+    "size": "40",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 63,
+  "fields": {
+    "product": 13,
+    "size": "41",
+    "stock": 7
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 64,
+  "fields": {
+    "product": 13,
+    "size": "42",
+    "stock": 5
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 65,
+  "fields": {
+    "product": 13,
+    "size": "43",
+    "stock": 2
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 66,
+  "fields": {
+    "product": 14,
+    "size": "S",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 67,
+  "fields": {
+    "product": 14,
+    "size": "M",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 68,
+  "fields": {
+    "product": 14,
+    "size": "L",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 69,
+  "fields": {
+    "product": 14,
+    "size": "XL",
+    "stock": 5
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 70,
+  "fields": {
+    "product": 14,
+    "size": "XXL",
+    "stock": 3
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 71,
+  "fields": {
+    "product": 15,
+    "size": "S",
+    "stock": 20
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 72,
+  "fields": {
+    "product": 15,
+    "size": "M",
+    "stock": 28
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 73,
+  "fields": {
+    "product": 15,
+    "size": "L",
+    "stock": 22
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 74,
+  "fields": {
+    "product": 16,
+    "size": "Talla 5",
+    "stock": 45
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 75,
+  "fields": {
+    "product": 17,
+    "size": "7",
+    "stock": 8
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 76,
+  "fields": {
+    "product": 17,
+    "size": "8",
+    "stock": 12
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 77,
+  "fields": {
+    "product": 17,
+    "size": "9",
+    "stock": 15
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 78,
+  "fields": {
+    "product": 17,
+    "size": "10",
+    "stock": 10
+  }
+},
+{
+  "model": "products.productsize",
+  "pk": 79,
+  "fields": {
+    "product": 17,
+    "size": "11",
+    "stock": 6
+  }
+}
+]

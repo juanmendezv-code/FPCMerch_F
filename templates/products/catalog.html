@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% load money static %}
+{% block title %}Catálogo · FPCMerch
+{% endblock %}
+{% block content %}
+<section class="page-heading container">
+<span class="eyebrow">EQUÍPATE PARA EL JUEGO</span>
+<h1>Catálogo</h1>
+<p>Prendas y accesorios inspirados en la pasión por el fútbol.</p>
+</section>
+<section class="catalog-layout container">
+<button class="button button-light mobile-filter" data-filter-toggle>☷ Filtros</button>
+<aside class="filter-panel" data-filter-panel>
+<form method="get" id="catalogFilters">
+<h2>Filtrar</h2>
+<label for="category">Categoría</label>
+<select id="category" name="categoria">
+<option value="">Todas</option>
+{% for category in store_categories %}<option value="{{ category.slug }}"
+{% if filters.categoria == category.slug %}selected
+{% endif %}>{{ category.name }}</option>
+{% endfor %}</select>
+<label for="priceRange">Precio máximo <output id="priceOutput">{{ filters.precio_max|default:'500000'|cop }}</output>
+</label>
+<input id="priceRange" name="precio_max" type="range" min="0" max="500000" step="10000" value="{{ filters.precio_max|default:'500000' }}">
+<fieldset>
+<legend>Talla</legend>
+<div class="size-chips">
+<label>
+<input type="radio" name="talla" value=""
+{% if not filters.talla %}checked
+{% endif %}>
+<span>Todas</span>
+</label>
+<label>
+<input type="radio" name="talla" value="XS"
+{% if filters.talla == 'XS' %}checked
+{% endif %}>
+<span>XS</span>
+</label>
+<label>
+<input type="radio" name="talla" value="S"
+{% if filters.talla == 'S' %}checked
+{% endif %}>
+<span>S</span>
+</label>
+<label>
+<input type="radio" name="talla" value="M"
+{% if filters.talla == 'M' %}checked
+{% endif %}>
+<span>M</span>
+</label>
+<label>
+<input type="radio" name="talla" value="L"
+{% if filters.talla == 'L' %}checked
+{% endif %}>
+<span>L</span>
+</label>
+<label>
+<input type="radio" name="talla" value="XL"
+{% if filters.talla == 'XL' %}checked
+{% endif %}>
+<span>XL</span>
+</label>
+<label>
+<input type="radio" name="talla" value="XXL"
+{% if filters.talla == 'XXL' %}checked
+{% endif %}>
+<span>XXL</span>
+</label>
+</div>
+</fieldset>
+<label for="order">Ordenar por</label>
+<select name="orden" id="order">
+<option value=""
+{% if not filters.orden %}selected
+{% endif %}>Relevancia</option>
+<option value="precio-asc"
+{% if filters.orden == 'precio-asc' %}selected
+{% endif %}>Precio menor a mayor</option>
+<option value="precio-desc"
+{% if filters.orden == 'precio-desc' %}selected
+{% endif %}>Precio mayor a menor</option>
+<option value="nombre"
+{% if filters.orden == 'nombre' %}selected
+{% endif %}>Nombre A-Z</option>
+<option value="nuevos"
+{% if filters.orden == 'nuevos' %}selected
+{% endif %}>Más nuevos</option>
+</select>
+{% if filters.q %}<input type="hidden" name="q" value="{{ filters.q }}">
+{% endif %}<button class="button button-dark full-width" type="submit">Aplicar filtros</button>
+<a class="clear-filters" href="{% url 'products:catalog' %}">Limpiar filtros</a>
+</form>
+</aside>
+<div class="catalog-results">
+<div class="results-toolbar">
+<span id="resultsCount">
+<b>{{ page_obj.paginator.count }}</b> productos</span>
+<span>Mostrando página {{ page_obj.number }} de {{ page_obj.paginator.num_pages }}</span>
+</div>
+{% if products %}<div id="catalogGrid" class="product-grid">
+{% for product in products %}
+{% include 'includes/product_card.html' %}
+{% endfor %}</div>
+{% else %}<div id="noResults" class="empty-state">
+<h2>No encontramos productos</h2>
+<p>Prueba cambiar o limpiar los filtros.</p>
+<a class="button button-dark" href="{% url 'products:catalog' %}">Limpiar filtros</a>
+</div>
+{% endif %}
+<nav class="pagination" aria-label="Paginación">
+{% if page_obj.has_previous %}<a href="? {% if filters.urlencode %}{{ filters.urlencode }}& {% endif %}page={{ page_obj.previous_page_number }}">← Anterior</a>
+{% endif %}<span>{{ page_obj.number }} / {{ page_obj.paginator.num_pages }}</span>
+{% if page_obj.has_next %}<a href="? {% if filters.urlencode %}{{ filters.urlencode }}& {% endif %}page={{ page_obj.next_page_number }}">Siguiente →</a>
+{% endif %}</nav>
+</div>
+</section>
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'js/catalog.js' %}">
+</script>
+{% endblock %}

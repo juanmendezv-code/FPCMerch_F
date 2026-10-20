@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% block title %}Entrar · FPCMerch
+{% endblock %}
+{% block content %}<section class="auth-page container">
+<div class="auth-promo">
+<span class="brand-mark">F</span>
+<p class="eyebrow">FPCMERCH STORE</p>
+<h1>El fútbol<br>se vive aquí.</h1>
+<ul>
+<li>Más de 500 productos · referencia</li>
+<li>Entrega en 48 horas · referencia</li>
+<li>4,9 estrellas · indicador ilustrativo</li>
+</ul>
+</div>
+<form method="post" class="form-card auth-form">
+{% csrf_token %}<h2>Bienvenido de vuelta</h2>
+{% for field in form %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}
+{% if form.errors %}<p class="field-error">No pudimos iniciar sesión con esos datos.</p>
+{% endif %}<a href="{% url 'password_reset' %}">¿Olvidaste tu contraseña?</a>
+<button class="button button-dark full-width">Entrar</button>
+<p>¿No tienes cuenta? <a href="{% url 'users:register' %}">Crear cuenta</a>
+</p>
+</form>
+</section>
+{% endblock %}

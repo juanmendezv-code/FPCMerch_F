@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% block title %}Crear cuenta · FPCMerch
+{% endblock %}
+{% block content %}<section class="auth-page container">
+<div class="auth-promo">
+<span class="brand-mark">F</span>
+<p class="eyebrow">FPCMERCH STORE</p>
+<h1>Únete a la<br>tribuna.</h1>
+<p>Regístrate para continuar con tu compra.</p>
+</div>
+<form method="post" class="form-card auth-form">
+{% csrf_token %}<h2>Crear cuenta</h2>
+{% for field in form %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}<button class="button button-dark full-width">Crear cuenta</button>
+<p>¿Ya tienes cuenta? <a href="{% url 'users:login' %}">Entrar</a>
+</p>
+<a href="{% url 'pages:info' 'terminos' %}">Lee los términos y condiciones (contenido ilustrativo)</a>
+</form>
+</section>
+{% endblock %}

@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}Solicitud incorrecta · FPCMerch
+{% endblock %}
+{% block content %}<section class="container info-card">
+<span class="eyebrow">ERROR 400</span>
+<h1>Solicitud incorrecta</h1>
+<p>Revisa la información enviada e inténtalo de nuevo.</p>
+<a class="button button-dark" href="{% url 'pages:home' %}">Volver al inicio</a>
+</section>
+{% endblock %}

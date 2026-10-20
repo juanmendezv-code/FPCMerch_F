@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}Gestión de productos · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">PANEL DE PERSONAL</span>
+<h1>Gestión de productos</h1>
+<a class="button button-dark" href="{% url 'products:create' %}">Crear producto</a>
+</section>
+<section class="container">
+<form method="get" class="management-search">
+<label for="q">Buscar</label>
+<input id="q" name="q" value="{{ request.GET.q }}">
+<button class="button button-light">Buscar</button>
+</form>
+<div class="table-scroll">
+<table class="data-table">
+<thead>
+<tr>
+<th>Imagen</th>
+<th>Nombre</th>
+<th>Categoría</th>
+<th>Precio</th>
+<th>Stock</th>
+<th>Destacado</th>
+<th>Acciones</th>
+</tr>
+</thead>
+<tbody>
+{% for product in products %}<tr>
+<td>
+{% if product.image %}<img class="table-thumb" src="{{ product.image.url }}" alt="">
+{% endif %}</td>
+<td>{{ product.name }}</td>
+<td>{{ product.category }}</td>
+<td>{{ product.price|cop }}</td>
+<td>{{ product.stock_sum|default:0 }}</td>
+<td>{{ product.is_featured|yesno:'Sí,No' }}</td>
+<td>
+<a href="{% url 'products:detail' product.slug %}">Ver</a> · <a href="{% url 'products:update' product.pk %}">Editar</a> · <a href="{% url 'products:delete' product.pk %}">Eliminar</a>
+</td>
+</tr>
+{% empty %}<tr>
+<td colspan="7">No hay productos.</td>
+</tr>
+{% endfor %}</tbody>
+</table>
+</div>
+{% if is_paginated %}<nav class="pagination">
+{% if page_obj.has_previous %}<a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+{% endif %}<span>{{ page_obj.number }}</span>
+{% if page_obj.has_next %}<a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+{% endif %}</nav>
+{% endif %}</section>
+{% endblock %}

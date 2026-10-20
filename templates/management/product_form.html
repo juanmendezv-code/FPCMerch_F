@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% block title %}
+{% if object %}Editar
+{% else %}Crear
+{% endif %} producto · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">PANEL DE PERSONAL</span>
+<h1>
+{% if object %}Editar producto
+{% else %}Crear producto
+{% endif %}</h1>
+</section>
+<form method="post" enctype="multipart/form-data" class="form-card container management-form">
+{% csrf_token %}
+{{ form.non_field_errors }}
+{% for field in form %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}<h2>Tallas y existencias</h2>{{ size_formset.management_form }}{{ size_formset.non_form_errors }}
+{% for size_form in size_formset %}<div class="size-form-row">
+{{ size_form.non_field_errors }}
+{% for hidden in size_form.hidden_fields %}{{ hidden }}
+{% endfor %}
+{% for field in size_form.visible_fields %}<div class="form-field">
+<label for="{{ field.id_for_label }}">{{ field.label }}</label>{{ field }}
+{% for error in field.errors %}<small class="field-error">{{ error }}</small>
+{% endfor %}</div>
+{% endfor %}</div>
+{% endfor %}<button class="button button-dark">Guardar producto</button>
+<a href="{% url 'products:manage' %}">Cancelar</a>
+</form>
+{% endblock %}

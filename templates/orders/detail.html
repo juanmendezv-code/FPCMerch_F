@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% load money %}
+{% block title %}Pedido {{ order.number }} · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">PEDIDO {{ order.number }}</span>
+<h1>
+{% if request.resolver_match.url_name == 'confirmation' %}¡Gracias por tu pedido!
+{% else %}Detalle del pedido
+{% endif %}</h1>
+<p>Estado: {{ order.get_status_display }} · {{ order.created_at|date:'d/m/Y H:i' }}</p>
+</section>
+<section class="container">
+<table class="data-table">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Talla</th>
+<th>Cantidad</th>
+<th>Precio unitario</th>
+<th>Subtotal</th>
+</tr>
+</thead>
+<tbody>
+{% for line in order.items.all %}<tr>
+<td>{{ line.product.name }}</td>
+<td>{{ line.size }}</td>
+<td>{{ line.quantity }}</td>
+<td>{{ line.unit_price|cop }}</td>
+<td>{{ line.unit_price|multiply:line.quantity|cop }}</td>
+</tr>
+{% endfor %}</tbody>
+</table>
+<div class="order-summary summary-inline">
+<p>Subtotal <strong>{{ order.subtotal|cop }}</strong>
+</p>
+<p>Envío <strong>{{ order.shipping_cost|cop }}</strong>
+</p>
+<p>Total <strong>{{ order.total|cop }}</strong>
+</p>
+<a href="{% url 'users:profile' %}">Volver a mi cuenta</a>
+</div>
+</section>
+{% endblock %}

@@ -1,0 +1,25 @@
+services:
+  - type: web
+    name: fpcmerch
+    runtime: python
+    plan: free
+    region: ohio
+    buildCommand: bash build.sh
+    startCommand: gunicorn fpcmerch.wsgi:application --bind 0.0.0.0:$PORT --workers 1
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.12.10
+      - key: SECRET_KEY
+        generateValue: true
+      - key: DEBUG
+        value: "False"
+      - key: ALLOWED_HOSTS
+        value: .onrender.com
+      - key: CSRF_TRUSTED_ORIGINS
+        value: https://*.onrender.com
+      - key: DATABASE_URL
+        sync: false
+      - key: CLOUDINARY_URL
+        sync: false
+      - key: EXTERNAL_RATE_URL
+        value: https://open.er-api.com/v6/latest/USD

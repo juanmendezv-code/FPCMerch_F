@@ -1,0 +1,40 @@
+{% load money %}<header class="site-header">
+<div class="nav-wrap container">
+<a class="brand" href="{% url 'pages:home' %}" aria-label="FPCMerch inicio">
+<span class="brand-mark">F</span>
+<span>FPC<span class="accent">MERCH</span>
+<small>FÚTBOL · CULTURA · PASIÓN</small>
+</span>
+</a>
+<button class="icon-button menu-toggle" data-menu-toggle aria-label="Abrir menú" aria-expanded="false">☰</button>
+<nav class="main-nav" data-main-nav aria-label="Navegación principal">
+<a href="{% url 'pages:home' %}">Inicio</a>
+<a href="{% url 'products:catalog' %}">Catálogo</a>
+<div class="nav-dropdown">
+<button type="button" class="nav-link">Categorías <span>⌄</span>
+</button>
+<div class="dropdown-menu">
+{% for category in store_categories %}<a href="{% url 'products:catalog' %}?categoria={{ category.slug }}">{{ category.name }}</a>
+{% endfor %}</div>
+</div>
+<a href="{% url 'contact:contact' %}">Contacto</a>
+</nav>
+<form class="search-wrap" id="searchWrap" action="{% url 'products:catalog' %}" method="get" role="search">
+<label class="sr-only" for="searchInput">Buscar productos</label>
+<input id="searchInput" name="q" type="search" placeholder="Buscar productos..." autocomplete="off">
+<button id="searchBtn" aria-label="Buscar"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.5"></circle><path d="m16 16 5 5"></path></svg></button>
+<div id="searchSuggestions" class="search-suggestions" hidden>
+</div>
+</form>
+<div class="nav-actions">
+{% if user.is_authenticated %}
+<a class="user-link" href="{% url 'users:profile' %}" id="userBtn">♙ <span id="userLabel">{{ user.first_name|default:user.email }}</span></a>
+{% else %}
+<a class="user-link" href="{% url 'users:login' %}" id="userBtn">♙ <span id="userLabel">Entrar</span></a>
+{% endif %}
+<a class="cart-link" id="cartBtn" href="{% url 'cart:view' %}" aria-label="Carrito">♧ <span>Carrito</span>
+<b id="cartBadge">{{ cart_summary.count|default:0 }}</b>
+</a>
+</div>
+</div>
+</header>

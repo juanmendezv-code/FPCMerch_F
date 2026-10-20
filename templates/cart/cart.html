@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load money static %}
+{% block title %}Mi carrito · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">ANTES DEL PITAZO INICIAL</span>
+<h1>Mi carrito ({{ count }})</h1>
+</section>
+<section class="container cart-page cartLayout">
+{% if lines %}<div class="cart-table-wrap">
+<table class="data-table cart-table">
+<thead>
+<tr>
+<th>Producto</th>
+<th>Talla</th>
+<th>Precio</th>
+<th>Cantidad</th>
+<th>Subtotal</th>
+<th>Quitar</th>
+</tr>
+</thead>
+<tbody>
+{% for line in lines %}<tr>
+<td>
+<div class="cart-product">
+{% if line.product.image %}<img src="{{ line.product.image.url }}" alt="">
+{% endif %}<a href="{% url 'products:detail' line.product.slug %}">{{ line.product.name }}</a>
+</div>
+</td>
+<td>{{ line.size }}</td>
+<td>{{ line.product.price|cop }}</td>
+<td>
+<form class="cart-update-form" data-cart-update>
+<input type="hidden" name="size_id" value="{{ line.variant.pk }}">
+<label class="sr-only" for="qty-{{ line.variant.pk }}">Cantidad de {{ line.product.name }}</label>
+<input id="qty-{{ line.variant.pk }}" type="number" name="quantity" min="1" max="{{ line.variant.stock }}" value="{{ line.quantity }}">
+<button class="button button-light">Actualizar</button>
+</form>
+</td>
+<td>{{ line.subtotal|cop }}</td>
+<td>
+<form data-cart-remove>
+<input type="hidden" name="size_id" value="{{ line.variant.pk }}">
+<button class="icon-button" aria-label="Eliminar {{ line.product.name }}">×</button>
+</form>
+</td>
+</tr>
+{% endfor %}</tbody>
+</table>
+</div>
+<aside class="order-summary">
+<h2>Resumen</h2>
+<p>
+<span>Subtotal</span>
+<strong>{{ total|cop }}</strong>
+</p>
+<small>El envío se calcula en el checkout.</small>
+<p>
+<span>Total parcial</span>
+<strong>{{ total|cop }}</strong>
+</p>
+<a class="button button-dark full-width" href="{% url 'orders:checkout' %}">Proceder con la compra</a>
+<a class="continue-link" href="{% url 'products:catalog' %}">← Continuar comprando</a>
+</aside>
+{% else %}<div class="empty-state">
+<h2>Tu carrito está vacío</h2>
+<p>Encuentra tu próxima camiseta favorita.</p>
+<a class="button button-dark" href="{% url 'products:catalog' %}">Ir al catálogo</a>
+</div>
+{% endif %}</section>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

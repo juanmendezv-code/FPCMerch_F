@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load money static %}
+{% block title %}{{ product.name }} · FPCMerch
+{% endblock %}
+{% block content %}<section class="container detail-layout">
+<div class="detail-image">
+{% if product.image %}<img src="{{ product.image.url }}" alt="{{ product.name }}">
+{% else %}<span>FPC</span>
+{% endif %}</div>
+<div class="detail-copy">
+<a class="breadcrumb" href="{% url 'products:catalog' %}">Catálogo / {{ product.category.name }}</a>
+<h1>{{ product.name }}</h1>
+<p class="detail-price">{{ product.price|cop }}</p>
+<p>{{ product.description }}</p>
+<p class="usd-note">
+{% if usd_price %}Precio aproximado, solo referencia: USD ${{ usd_price }}
+{% else %}Conversión USD temporalmente no disponible.
+{% endif %}</p>
+<form data-cart-form data-product-id="{{ product.pk }}" class="detail-cart-form">
+<label for="size-select">Talla o variante</label>
+<select name="size_id" id="size-select" required>
+{% for size in product.sizes.all %}<option value="{{ size.pk }}"
+{% if not size.stock %}disabled
+{% endif %}>{{ size.size }} ·
+{% if size.stock %}{{ size.stock }} disponibles
+{% else %}Agotada
+{% endif %}</option>
+{% endfor %}</select>
+<label for="quantity">Cantidad</label>
+<input type="number" name="quantity" id="quantity" value="1" min="1" max="{{ product.stock_total }}">
+<button class="button button-dark" type="submit"
+{% if not product.stock_total %}disabled
+{% endif %}>Agregar al carrito</button>
+</form>
+<small>SKU: {{ product.sku }}</small>
+</div>
+</section>
+{% endblock %}
+{% block scripts %}
+{% endblock %}

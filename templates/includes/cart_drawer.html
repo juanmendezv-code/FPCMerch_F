@@ -1,0 +1,14 @@
+<div class="drawer-overlay" id="cartDrawerOverlay" hidden>
+</div>
+<aside class="cart-drawer" id="cartDrawer" aria-label="Mi carrito" aria-hidden="true">
+<div class="drawer-heading">
+<h2>Mi carrito (<span data-drawer-count>{{ cart_summary.count|default:0 }}</span>)</h2>
+<button class="icon-button" data-drawer-close aria-label="Cerrar carrito">×</button>
+</div>
+<div class="drawer-body" id="cartDrawerBody">
+<p>Cargando carrito…</p>
+</div>
+<div class="drawer-footer" id="cartDrawerFooter">
+<a class="button button-dark full-width" href="{% url 'cart:view' %}">Ver carrito</a>
+</div>
+</aside>

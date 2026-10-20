@@ -1,0 +1,41 @@
+{% load static money %}<!doctype html>
+<html lang="es-CO">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="csrf-token" content="{{ csrf_token }}">
+<title>
+{% block title %}FPCMerch · Tienda deportiva
+{% endblock %}</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'css/globals.css' %}">
+<link rel="stylesheet" href="{% static 'css/components/cart.css' %}">
+{% block styles %}
+{% endblock %}
+</head>
+<body>
+<div class="announcement">Fútbol, pasión y estilo · Envío gratis desde $150.000 COP</div>
+{% include 'includes/navbar.html' %}
+{% include 'includes/cart_drawer.html' %}
+<main id="main-content">
+{% block content %}
+{% endblock %}</main>
+{% include 'includes/footer.html' %}
+<div id="toastContainer" class="toast-container" aria-live="polite">
+{% for message in messages %}<div class="toast {{ message.tags }}">{{ message }}</div>
+{% endfor %}
+</div>
+<script type="module" src="{% static 'js/main.js' %}">
+</script>
+<script type="module" src="{% static 'js/cart.js' %}">
+</script>
+<script type="module" src="{% static 'js/search.js' %}">
+</script>
+<script type="module" src="{% static 'js/auth.js' %}">
+</script>
+{% block scripts %}
+{% endblock %}
+</body>
+</html>

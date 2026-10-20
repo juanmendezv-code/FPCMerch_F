@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% block title %}{{ title }} · FPCMerch
+{% endblock %}
+{% block content %}<section class="page-heading container">
+<span class="eyebrow">FPCMERCH · INFORMACIÓN</span>
+<h1>{{ title }}</h1>
+</section>
+<section class="container info-card">
+<p>{{ body }}</p>
+{% if title == 'Seguimiento de pedido' %}
+{% if user.is_authenticated %}<h2>Tus pedidos</h2>
+{% for order in orders %}<p>
+<a href="{% url 'orders:detail' order.number %}">{{ order.number }} · {{ order.get_status_display }}</a>
+</p>
+{% empty %}<p>No tienes pedidos todavía.</p>
+{% endfor %}
+{% else %}<a class="button button-dark" href="{% url 'users:login' %}">Iniciar sesión</a>
+{% endif %}
+{% endif %}</section>
+{% endblock %}

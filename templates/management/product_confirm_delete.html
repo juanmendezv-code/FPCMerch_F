@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block title %}Eliminar producto · FPCMerch
+{% endblock %}
+{% block content %}<section class="container form-card delete-card">
+<h1>Eliminar producto</h1>
+<p>¿Confirmas eliminar “{{ object.name }}”? Si está asociado a un pedido, se desactivará para conservar el historial.</p>
+<form method="post">
+{% csrf_token %}<button class="button button-danger">Confirmar eliminación</button>
+<a href="{% url 'products:manage' %}">Cancelar</a>
+</form>
+</section>
+{% endblock %}

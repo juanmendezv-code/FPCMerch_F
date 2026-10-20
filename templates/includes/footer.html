@@ -1,0 +1,36 @@
+<footer class="site-footer">
+<div class="container footer-grid">
+<div>
+<a class="brand footer-brand" href="{% url 'pages:home' %}">
+<span class="brand-mark">F</span>
+<span>FPC<span class="accent">MERCH</span>
+<small>FÚTBOL · CULTURA · PASIÓN</small>
+</span>
+</a>
+<p>Prendas y accesorios para vivir el fútbol.</p>
+</div>
+<div>
+<h3>Explora</h3>
+<a href="{% url 'products:catalog' %}">Catálogo</a>
+{% for category in store_categories %}<a href="{% url 'products:catalog' %}?categoria={{ category.slug }}">{{ category.name }}</a>
+{% endfor %}</div>
+<div>
+<h3>Ayuda</h3>
+<a href="{% url 'contact:contact' %}">Contacto</a>
+<a href="{% url 'pages:info' 'terminos' %}">Términos y condiciones</a>
+<a href="{% url 'pages:info' 'devoluciones' %}">Devoluciones</a>
+<a href="{% url 'pages:info' 'guia-de-tallas' %}">Guía de tallas</a>
+<a href="{% url 'pages:info' 'preguntas-frecuentes' %}">Preguntas frecuentes</a>
+<a href="{% url 'pages:info' 'seguimiento' %}">Seguimiento de pedido</a>
+</div>
+<div>
+<h3>Contacto</h3>
+<p>{{ store_info.address }}</p>
+<p>{{ store_info.phone }}</p>
+<p>{{ store_info.email }}</p>
+<small>Datos de contacto de referencia.</small>
+</div>
+</div>
+<div class="footer-bottom">©
+{% now "Y" %} FPCMerch · Proyecto académico demostrativo</div>
+</footer>

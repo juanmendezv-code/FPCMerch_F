@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load money static %}
+{% block title %}FPCMerch · La pasión se viste
+{% endblock %}
+{% block content %}
+<section class="hero-carousel" id="heroCarousel" aria-label="Colecciones destacadas">
+<div class="hero-slides">
+<article class="hero-slide hero-green is-active">
+<div class="container hero-content">
+<div class="hero-copy">
+<span class="eyebrow">NUEVA TEMPORADA 2025</span>
+<h1>Viste como<br>
+<em>Campeón.</em>
+</h1>
+<p>La camiseta que acompaña cada jugada.</p>
+<div class="hero-buttons">
+<a class="button button-white" href="{% url 'products:catalog' %}?categoria=camisetas">Ver camisetas</a>
+<a class="button button-outline" href="{% url 'products:catalog' %}">Todo el catálogo</a>
+</div>
+</div>
+<div class="hero-shirt" aria-label="Camiseta ilustrativa número 10">
+<div class="shirt-shape">
+<b>FPC</b>
+<strong>10</strong>
+</div>
+</div>
+</div>
+</article>
+<article class="hero-slide hero-orange">
+<div class="container hero-content">
+<div class="hero-copy">
+<span class="eyebrow">OFERTA ESPECIAL</span>
+<h1>Uniformes<br>
+<em>Completos.</em>
+</h1>
+<p>Colores para jugar en equipo.</p>
+<div class="hero-buttons">
+<a class="button button-white" href="{% url 'products:catalog' %}?categoria=uniformes">Ver uniformes</a>
+<a class="button button-outline" href="{% url 'products:catalog' %}">Ver todo</a>
+</div>
+</div>
+<div class="hero-shirt shirt-orange">
+<div class="shirt-shape">
+<b>FPC</b>
+<strong>7</strong>
+</div>
+</div>
+</div>
+</article>
+<article class="hero-slide hero-blue">
+<div class="container hero-content">
+<div class="hero-copy">
+<span class="eyebrow">COLECCIÓN INVIERNO</span>
+<h1>Chaquetas<br>
+<em>Técnicas.</em>
+</h1>
+<p>Protección ligera para cada entrenamiento.</p>
+<div class="hero-buttons">
+<a class="button button-white" href="{% url 'products:catalog' %}?categoria=chaquetas">Ver chaquetas</a>
+<a class="button button-outline" href="{% url 'products:catalog' %}">Ver todo</a>
+</div>
+</div>
+<div class="hero-shirt shirt-blue">
+<div class="shirt-shape">
+<b>FPC</b>
+<strong>1</strong>
+</div>
+</div>
+</div>
+</article>
+</div>
+<button class="carousel-arrow previous" data-carousel-prev aria-label="Diapositiva anterior">‹</button>
+<button class="carousel-arrow next" data-carousel-next aria-label="Diapositiva siguiente">›</button>
+<div id="carouselDots" class="carousel-dots" aria-label="Elegir diapositiva">
+</div>
+</section>
+<section class="section container quick-cats">
+<div class="section-heading">
+<div>
+<span class="eyebrow">ENCUENTRA TU ESTILO</span>
+<h2>Compra por categoría</h2>
+</div>
+<a href="{% url 'products:catalog' %}">Ver catálogo →</a>
+</div>
+<div class="category-grid">
+{% for category in categories %}<a class="category-card" href="{% url 'products:catalog' %}?categoria={{ category.slug }}">
+<span>{{ category.icon }}</span>
+<b>{{ category.name }}</b>
+<small>{{ category.product_count }} productos</small>
+</a>
+{% endfor %}</div>
+</section>
+<section class="section featured-section">
+<div class="container">
+<div class="section-heading">
+<div>
+<span class="eyebrow">PARA LOS QUE VIVEN EL FÚTBOL</span>
+<h2>Lo más vendido <span>/ Productos destacados</span>
+</h2>
+</div>
+<a href="{% url 'products:catalog' %}">Ver todo →</a>
+</div>
+<div class="product-grid" id="featuredGrid">
+{% for product in featured_products %}
+{% include 'includes/product_card.html' %}
+{% empty %}<p>Aún no hay productos destacados.</p>
+{% endfor %}</div>
+</div>
+</section>
+<section class="promo-banner container">
+<div>
+<span class="eyebrow">HAZLO TUYO</span>
+<h2>¿Quieres tu nombre y número?</h2>
+<p>Cuéntanos tu idea. Esta sección es informativa; la personalización se confirma directamente por contacto.</p>
+<a class="button button-dark" href="{% url 'contact:contact' %}?asunto=personalizacion">Personalizar ahora</a>
+</div>
+<div class="stacked-shirts" aria-hidden="true">
+<span>10</span>
+<span>7</span>
+<span>9</span>
+</div>
+</section>
+<section class="trust-section">
+<div class="container trust-grid">
+<div>
+<b>🚚</b>
+<strong>Envío gratis</strong>
+<small>Desde $150.000 COP · según la configuración demo</small>
+</div>
+<div>
+<b>↺</b>
+<strong>Devolución en 30 días</strong>
+<small>Política de ejemplo, por confirmar</small>
+</div>
+<div>
+<b>⌑</b>
+<strong>Pago seguro</strong>
+<small>Afirmación ilustrativa; no hay pasarela real</small>
+</div>
+<div>
+<b>★</b>
+<strong>4,9 / 5</strong>
+<small>Más de 2.800 reseñas · referencia no verificada</small>
+</div>
+</div>
+</section>
+{% endblock %}
+{% block scripts %}<script type="module" src="{% static 'js/carousel.js' %}">
+</script>
+{% endblock %}

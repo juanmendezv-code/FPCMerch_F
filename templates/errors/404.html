@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+{% block title %}No encontrado · FPCMerch
+{% endblock %}
+{% block content %}<section class="container info-card">
+<span class="eyebrow">ERROR 404</span>
+<h1>Este balón salió de la cancha</h1>
+<p>No encontramos la página o el producto solicitado.</p>
+<a class="button button-dark" href="{% url 'pages:home' %}">Volver al inicio</a>
+</section>
+{% endblock %}
